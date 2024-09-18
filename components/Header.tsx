@@ -25,7 +25,7 @@ export default function Component() {
   return (
     <div className="flex justify-between items-center bg-white shadow-sm p-5 border-b text-black">
       <Link href="/dashboard" className="text-2xl z-10">
-        Chat<span className="text-primary">PDF</span>
+        Chat<span className="text-purple-500">PDF</span>
       </Link>
 
       <SignedIn>
