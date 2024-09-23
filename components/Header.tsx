@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { FilePlus2 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Component() {
   };
 
   return (
-    <div className="flex justify-between items-center bg-white shadow-sm p-5 border-b text-black">
+    <div className="flex justify-between items-center bg-white dark:bg-black shadow-sm p-5 border-b border-gray-200 dark:border-gray-700">
       <Link href="/dashboard" className="text-2xl z-10">
         Chat<span className="text-purple-500">PDF</span>
       </Link>
@@ -44,10 +45,13 @@ export default function Component() {
             </Link>
           </Button>
 
+          <ThemeToggle />
+
           <UserButton />
         </div>
 
         <div className="md:hidden flex items-center space-x-2">
+          <ThemeToggle />
           <UserButton />
           <Button
             variant="ghost"
@@ -78,12 +82,12 @@ export default function Component() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "100%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="fixed inset-y-0 right-0 w-64 bg-white z-10 flex flex-col items-start justify-start p-5 shadow-lg"
+                className="fixed inset-y-0 right-0 w-64 bg-white dark:bg-black z-10 flex flex-col items-start justify-start p-5 shadow-lg"
               >
                 <div className="w-full pt-14 flex flex-col space-y-4">
                   <Button
                     asChild
-                    variant="default"
+                    variant="link"
                     onClick={toggleMenu}
                     className="w-full justify-center"
                   >
